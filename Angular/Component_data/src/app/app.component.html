@@ -1,0 +1,54 @@
+    <h1>{{ title | uppercase  }}</h1>
+    <h1 *ngIf='myBoolean'> Show this!</h1>
+    <h1 *ngIf='!myBoolean'> Don't show this!</h1>
+    <h1 *ngIf='1===1'> Show this too!</h1>
+    <ul>      
+      <li *ngFor="let arr of myArray">
+        {{arr}}
+      </li>
+    </ul>
+    <ul>      
+      <li *ngFor="let num of [1,23,5,46,346,736]">
+        {{num}}
+      </li>
+    </ul>
+    <h3 *ngFor='let numberr of [1,23,5,46,346,736];let idx = index'>
+        {{numberr}}
+    </h3>
+    <p>{{ number | currency: 'Aus' }}</p>
+    <p>{{ amount | currency }}</p>
+    <p>{{x}}</p>
+    <p>{{y}}</p>
+    <p>{{x+y}}</p>
+    <p>{{myStr}} {{x}} </p>
+    <p>{{ name  }}</p>
+    <p>{{user | json  }}</p>
+    <p>{{ user.firstName | uppercase }}
+    {{ user.lastName }} </p>
+    <input type="text" [value]="x">
+    <img [src]="y" alt="">
+    <p>{{ today | date:'fullDate' }} </p>
+    <p>{{ today | date:'longDate' }} </p>
+    <p>{{ today | date:'shortDate' }} </p>
+    <p>{{ today | date:'mediumTime' }} </p>
+    <p>{{ today | date:'shortTime' }} </p>
+    <p>{{ today | date:'medium' }} </p>
+    <p>{{ today | date:'short' }}</p>
+  
+  <span [ngStyle]="{
+  'background-color': 'green',
+  'background-color': color, 
+  'font-weight': 'bold'
+  }" >
+    Using ngStyle
+  </span>
+
+  <br>
+
+  <span [ngClass]="{
+  'red': true,  
+  'bold': false,
+  'on': switch
+  }" >
+    Using ngClass
+  </span>

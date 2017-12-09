@@ -1,0 +1,77 @@
+1, use my_first_db
+
+2, db.createCollection('students')
+
+3, db.students.insert({name: "Biniam", home_state: "Virginia" , lucky_number: 6,        birthday: {month: 06, day: 01, year: 1990}})
+
+db.students.insert({name: "John", home_state: "Maryland" , lucky_number: 8, birthday: {month: 02, day: 22, year: 1989}})
+
+db.students.insert({name: "Paul", home_state: "Maryland" , lucky_number: 22, birthday: {month: 9, day: 2, year: 1984}})
+
+db.students.insert({name: "Matt", home_state: "DC" , lucky_number: 4, birthday: {month: 4, day: 12, year: 1998}})
+
+db.students.insert({name: "Ben", home_state: "Virginia" , lucky_number: 2, birthday: {month: 11, day: 25, year: 1985}})
+
+4,  db.students.find()
+
+{ "_id" : ObjectId("5a21f05fc2486406df153d8f"), "name" : "Biniam", "home_state" : "Virginia", "lucky_number" : 6, "birthday" : { "month" : 6, "day" : 1, "year" : 1990 } }
+{ "_id" : ObjectId("5a21f198c2486406df153d90"), "name" : "John", "home_state" : "Maryland", "lucky_number" : 8, "birthday" : { "month" : 2, "day" : 22, "year" : 1989 } }
+{ "_id" : ObjectId("5a21f241c2486406df153d91"), "name" : "Paul", "home_state" : "Maryland", "lucky_number" : 22, "birthday" : { "month" : 9, "day" : 2, "year" : 1984 } }
+{ "_id" : ObjectId("5a21f28ac2486406df153d92"), "name" : "Matt", "home_state" : "DC", "lucky_number" : 4, "birthday" : { "month" : 4, "day" : 12, "year" : 1998 } }
+{ "_id" : ObjectId("5a21f315c2486406df153d93"), "name" : "Ben", "home_state" : "Virginia", "lucky_number" : 2, "birthday" : { "month" : 11, "day" : 25, "year" : 1985 } }
+
+5, db.students.find({$or: [{home_state: "Virginia"},{home_state: "DC"}]})
+
+{ "_id" : ObjectId("5a21f05fc2486406df153d8f"), "name" : "Biniam", "home_state" : "Virginia", "lucky_number" : 6, "birthday" : { "month" : 6, "day" : 1, "year" : 1990 } }
+{ "_id" : ObjectId("5a21f28ac2486406df153d92"), "name" : "Matt", "home_state" : "DC", "lucky_number" : 4, "birthday" : { "month" : 4, "day" : 12, "year" : 1998 } }
+{ "_id" : ObjectId("5a21f315c2486406df153d93"), "name" : "Ben", "home_state" : "Virginia", "lucky_number" : 2, "birthday" : { "month" : 11, "day" : 25, "year" : 1985 } }
+
+6,  
+6.1, db.students.find({lucky_number: {$gt: 3}})
+
+{ "_id" : ObjectId("5a21f05fc2486406df153d8f"), "name" : "Biniam", "home_state" : "Virginia", "lucky_number" : 6, "birthday" : { "month" : 6, "day" : 1, "year" : 1990 } }
+{ "_id" : ObjectId("5a21f198c2486406df153d90"), "name" : "John", "home_state" : "Maryland", "lucky_number" : 8, "birthday" : { "month" : 2, "day" : 22, "year" : 1989 } }
+{ "_id" : ObjectId("5a21f241c2486406df153d91"), "name" : "Paul", "home_state" : "Maryland", "lucky_number" : 22, "birthday" : { "month" : 9, "day" : 2, "year" : 1984 } }
+{ "_id" : ObjectId("5a21f28ac2486406df153d92"), "name" : "Matt", "home_state" : "DC", "lucky_number" : 4, "birthday" : { "month" : 4, "day" : 12, "year" : 1998 } }
+
+6.2, db.students.find({lucky_number: {$lte:10 }})
+
+{ "_id" : ObjectId("5a21f05fc2486406df153d8f"), "name" : "Biniam", "home_state" : "Virginia", "lucky_number" : 6, "birthday" : { "month" : 6, "day" : 1, "year" : 1990 } }
+{ "_id" : ObjectId("5a21f198c2486406df153d90"), "name" : "John", "home_state" : "Maryland", "lucky_number" : 8, "birthday" : { "month" : 2, "day" : 22, "year" : 1989 } }
+{ "_id" : ObjectId("5a21f28ac2486406df153d92"), "name" : "Matt", "home_state" : "DC", "lucky_number" : 4, "birthday" : { "month" : 4, "day" : 12, "year" : 1998 } }
+{ "_id" : ObjectId("5a21f315c2486406df153d93"), "name" : "Ben", "home_state" : "Virginia", "lucky_number" : 2, "birthday" : { "month" : 11, "day" : 25, "year" : 1985 } }
+
+6.3, db.students.find({$and:[{lucky_number:{$lte:9}}, {lucky_number:{$gte:1}}]})
+
+{ "_id" : ObjectId("5a21f05fc2486406df153d8f"), "name" : "Biniam", "home_state" : "Virginia", "lucky_number" : 6, "birthday" : { "month" : 6, "day" : 1, "year" : 1990 } }
+{ "_id" : ObjectId("5a21f198c2486406df153d90"), "name" : "John", "home_state" : "Maryland", "lucky_number" : 8, "birthday" : { "month" : 2, "day" : 22, "year" : 1989 } }
+{ "_id" : ObjectId("5a21f28ac2486406df153d92"), "name" : "Matt", "home_state" : "DC", "lucky_number" : 4, "birthday" : { "month" : 4, "day" : 12, "year" : 1998 } }
+{ "_id" : ObjectId("5a21f315c2486406df153d93"), "name" : "Ben", "home_state" : "Virginia", "lucky_number" : 2, "birthday" : { "month" : 11, "day" : 25, "year" : 1985 } }
+
+7,db.students.update({},{$set: {"interests":['coding', 'brunch', 'MongoDB']}},{multi:true})
+
+8,  db.students.update({name: "Biniam"},{$push: {interests:{$each:['reading', 'Soccer']}}})
+    db.students.update({name: "John"},{$push: {interests:'swimming'}})
+    db.students.update({name: "Matt"},{$push: {interests:{$each:['singing', 'listening music']}}})
+    db.students.update({name: "Ben"},{$push: {interests:{$each:['golf', 'running']}}})
+    db.students.update({name: "Paul"},{$push: {interests:{$each:['baseball', 'basketball']}}})
+
+9, db.students.update({name: "John"},{$push: {interests: "taxes"}})
+
+10, db.students.update({name: "John"},{$pull: {interests: "taxes"}})
+
+11, db.students.remove({$or: [{home_state:"Maryland"}, {home_state:"DC"}]}) 
+
+12, db.students.remove({name:"Ben"})
+
+13, db.students.remove({lucky_number: {$gt:5}}, {justOne:true})
+
+14, db.students.update({},{$set: {"number_of_belts":0}},{multi:true})
+
+15, db.students.update({home_state: "Virginia"},{$inc: {number_of_belts: 1}},{multi:true})
+
+16, db.students.update({}, {$rename: {"number_of_belts":"belts_earned"}})
+
+17, db.students.update({}, {$unset:{lucky_number:""}},{multi:true})
+
+18, db.students.update({}, {$currentDate:{updated_on:true}},{multi:true})

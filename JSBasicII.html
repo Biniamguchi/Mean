@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Basics II</title>
+    <script type="text/javascript">
+
+    function magicMultiply(x, y) {
+
+        // 2
+        if (x === 0 && y === 0) {
+            return "All inputs 0";
+        }
+
+        // 3
+        if (x.constructor === Array) {
+            for (let i = 0; i < x.length; i++) {
+                x[i] = x[i] * y
+            }
+            return x;
+        }
+
+        // 4
+        if (y.constructor === String) {
+            return "Error: Can not multiply by string";
+        }
+
+        // 5
+        if (x.constructor === String) {
+            let newString = "";
+            for (let i = 0; i<y; i++) {
+                newString += x;
+            }
+            return newString;
+        }
+
+        // 1
+        return x * y;
+    }
+
+    const one = magicMultiply(5, 2);
+    const two = magicMultiply(0, 0);
+    const three = magicMultiply([1, 2, 3], 2);
+    const four = magicMultiply(7, "three");
+    const five = magicMultiply("Brendo", 4);
+
+    console.log(one);
+    console.log(two);
+    console.log(three);
+    console.log(four;
+    console.log(five);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
