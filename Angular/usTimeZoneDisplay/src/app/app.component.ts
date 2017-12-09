@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'US Time Zone Display';
   time = new Date();
-  lastTimeZoneSelected = null;
+  
 
   dateByZone(timezone) {
     this.time = new Date();
