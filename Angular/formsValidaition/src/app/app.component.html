@@ -1,0 +1,52 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+<form (submit)="onSubmit()" #formData="ngForm">
+  <!-- <input type="text" name="firstname" (change)='user.firstName = $event.target.value'[value]='user.firstName'> -->
+  <input type="text" name="firstname" 
+  required 
+  minlength="4"
+  maxlength="24"   
+  [(ngModel)]='user.firstName'
+  #firstName="ngModel"/>
+  <input type="text" name="email" 
+  required 
+  minlength="4"
+  maxlength="24"
+  [(ngModel)]='user.email'
+  #email="ngModel"/>
+
+    <p>{{firstName.errors | json}}</p>
+    <p>{{firstName.valid | json}}</p>
+    <p>{{firstName.touched | json}}</p>
+    
+    <p [ngStyle]="{'color': 'red'}" 
+    *ngIf="firstName.errors && firstName.errors.required && firstName.touched"> Firstname cannot be blank</p>
+    <p [ngStyle]="{'color': 'red'}"
+    *ngIf="firstName.errors && firstName.errors.minlength">Name must be at least {{firstName.errors.minlength.requiredLength}} characters</p>
+
+    <!-- <div *ngIf="!firstName.valid">Error First Name</div> -->
+  <!-- <input type="text" name="lastname"
+  [(ngModel)]='user.lastName'> -->
+  <input *ngIf="formData.valid == false" disabled type="submit" value="submit">
+  <input *ngIf="formData.valid"  type="submit" value="submit">
+  {{formData.valid | json}}
+  
+</form>
+<div>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Email</th>
+
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.firstName}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- {{user | json}} -->
