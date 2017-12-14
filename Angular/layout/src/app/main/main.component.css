@@ -1,0 +1,10 @@
+
+div.main {
+    width: 625px;
+    margin: 30px;
+    padding: 10px;
+    border: solid black;
+    background-color: #9fc5f7;
+    display: inline-block;
+    vertical-align: top;
+}
