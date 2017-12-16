@@ -1,0 +1,41 @@
+#quote{
+    margin: 32px;
+    padding: 0;
+    height: 24vh;
+}
+
+#left{
+    width: 50%;
+    padding: 2.5%;        
+    height: 100%;
+    display: inline-block;
+    float: left;
+    word-wrap: break-word;
+}
+
+#votes{
+    padding: 2.5%;
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+#right{
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+
+}
+button{
+   background-color: orange; 
+}
+
+
+.option{
+    width: 100%;
+    height: 33%;        
+}
+ 
+ 
