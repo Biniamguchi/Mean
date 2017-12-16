@@ -1,0 +1,23 @@
+<fieldset>
+    <legend>Power Component</legend>     
+    <header>
+      <section class="level">
+        <form (submit)="setDisplay()">
+            <span class="title">Initial Power Level: </span>
+            <input type="number" name="level" [(ngModel)]="power" value="" min="1" max="100">                
+            <button>Calculate Powers</button>
+            </form>
+      </section>
+      <img src="../../assets/dragonball.jpg" alt="">
+      
+    </header>
+    <section class="body">
+      <app-human [power]="power" class='card'></app-human>
+      <app-saiyan [power]="power" class='card'></app-saiyan>
+      <app-supersaiyan [power]="power" class='card'></app-supersaiyan>
+      <app-supersaiyantwo [power]="power" class='card'></app-supersaiyantwo>
+      <app-supersaiyanthree [power]="power" class='card'></app-supersaiyanthree>
+      <app-supersaiyanfour [power]="power" class='card'></app-supersaiyanfour>
+    </section>
+
+</fieldset>

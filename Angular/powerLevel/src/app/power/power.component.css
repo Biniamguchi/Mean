@@ -1,0 +1,49 @@
+* {
+    /*outline: 1px dotted red;*/
+}
+
+header section {
+    padding: 30px;
+    min-height: 150px;
+}
+header section.level {
+    width: 700px;
+    display: inline-block;
+    vertical-align: top;
+}
+header section.level span,
+header section.level input {
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+header section.level input {
+    font-size: 1.5em;
+    width: 80px;
+}
+header section.level button{
+    height: 37px;
+    width: 200px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+img {
+    vertical-align: bottom;
+    display: inline-block;
+    width: 200px;
+    margin: auto;
+}
+section.body{
+    text-align: center;
+}
+.card {
+    background-color: lightgoldenrodyellow;
+    text-align: left;
+    width: 275px;
+    height: 125px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 15px;
+    padding: 5px;
+    vertical-align: top;
+}
