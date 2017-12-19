@@ -1,0 +1,40 @@
+<!-- <h1>Dojo Weather Forecast</h1> -->
+
+<!-- <a [routerLink]="['']">Dojo Weather Forecast</a> | -->
+<!-- <a [routerLink]="['burbank']">Burbank CA</a> |
+<a [routerLink]="['chicago']">Chicago IL</a> |
+<a [routerLink]="['dallas']">Dallas TX</a> |
+<a [routerLink]="['dc']">Washington DC</a> |
+<a [routerLink]="['sanjose']">San Jose CA</a> |
+<a [routerLink]="['seattle']">Seattle WA</a> |
+<router-outlet></router-outlet> -->
+
+<div class="container">
+    <h1>Dojo Weather Forecast</h1>
+    <ul>
+        <li>
+            <a [routerLink]="['/seattle']">Seattle, WA</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a [routerLink]="['/sanjose']">San Jose, CA</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a [routerLink]="['/burbank']">Burbank, CA</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a [routerLink]="['/dallas']">Dallas, TX</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a [routerLink]="['/dc']">Washington D.C.</a>
+        </li>
+        <li>|</li>
+        <li>
+            <a [routerLink]="['/chicago']">Chicago, IL</a>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
+</div>
