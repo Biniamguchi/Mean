@@ -1,0 +1,25 @@
+{
+  "name": "Restful ",
+  "version": "1.0.0",
+  "description": "Restful task api application to keep track of all the profound ninjas",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "dojo-json",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "compression": "^1.7.0",
+    "cors": "^2.8.4",
+    "ejs": "1.0.0",
+    "express": "~4.10.0",
+    "helmet": "^3.8.1",
+    "mongoose": "^4.1.1",
+    "mongoose-unique-validator": "^1.0.5",
+    "morgan": "^1.8.2"
+  }
+}
